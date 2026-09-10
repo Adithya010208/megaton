@@ -93,12 +93,12 @@ export default function Sidebar({ onNavigate, onResetDemo, isResetting, isOnline
       <div style={{ borderTop: '1px solid #1E293B', paddingTop: '16px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '6px 10px', background: 'var(--bg-subtle)', borderRadius: '6px', fontSize: '0.75rem', border: '1px solid var(--border)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-            <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: isOnline ? '#10B981' : '#EF4444' }} />
-            <span style={{ color: isOnline ? '#34D399' : '#F87171', fontWeight: 600 }}>
-              {isOnline ? 'System Online' : 'Backend Offline'}
+            <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: isOnline ? '#10B981' : '#38BDF8' }} />
+            <span style={{ color: isOnline ? '#34D399' : '#38BDF8', fontWeight: 600 }}>
+              {isOnline ? 'System Online' : 'Cloud Sandbox'}
             </span>
           </div>
-          <span style={{ fontSize: '0.65rem', color: '#94A3B8' }}>Port 8000</span>
+          <span style={{ fontSize: '0.65rem', color: '#94A3B8' }}>{isOnline ? 'Port 8000' : 'Demo Mode'}</span>
         </div>
 
         <button

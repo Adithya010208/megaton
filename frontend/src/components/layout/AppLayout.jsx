@@ -90,9 +90,9 @@ export default function AppLayout() {
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-          <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: isOnline ? '#10B981' : '#EF4444' }} />
-          <span style={{ fontSize: '0.7rem', color: isOnline ? '#34D399' : '#F87171' }}>
-            {isOnline ? 'Online' : 'Offline'}
+          <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: isOnline ? '#10B981' : '#38BDF8' }} />
+          <span style={{ fontSize: '0.7rem', color: isOnline ? '#34D399' : '#38BDF8', fontWeight: 600 }}>
+            {isOnline ? 'Online' : 'Sandbox'}
           </span>
         </div>
       </header>
@@ -150,38 +150,38 @@ export default function AppLayout() {
       {/* Main Content Area */}
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', minWidth: 0, overflowX: 'hidden' }}>
         
-        {/* Offline Banner if Backend Down */}
+        {/* Cloud Sandbox / Status Banner */}
         {!isOnline && (
           <div
             style={{
-              background: 'linear-gradient(90deg, #7F1D1D, #991B1B)',
-              color: '#FEE2E2',
-              padding: '10px 16px',
+              background: 'linear-gradient(90deg, #0F172A, #1E1B4B)',
+              color: '#93C5FD',
+              padding: '10px 18px',
               fontSize: '0.8125rem',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
               gap: '12px',
-              borderBottom: '1px solid #DC2626',
+              borderBottom: '1px solid #1E3A8A',
               flexWrap: 'wrap'
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <ServerOff size={16} color="#FCA5A5" />
+              <Shield size={16} color="#38BDF8" />
               <span>
-                <strong>BACKEND OFFLINE:</strong> Unable to connect to API server at <code>http://localhost:8000</code>. Ensure backend is running.
+                <strong>⚡ CLOUD DEMO SANDBOX:</strong> Interactive simulation with deterministic security telemetry. For live local FastAPI execution, run <code>run.bat</code>.
               </span>
             </div>
             <button
               onClick={handleRetryConnection}
               disabled={retryingConnection}
               style={{
-                background: '#FFFFFF',
-                color: '#991B1B',
-                border: 'none',
+                background: 'rgba(56, 189, 248, 0.15)',
+                color: '#38BDF8',
+                border: '1px solid #38BDF8',
                 borderRadius: '4px',
                 padding: '4px 10px',
-                fontWeight: 700,
+                fontWeight: 600,
                 fontSize: '0.75rem',
                 cursor: 'pointer',
                 display: 'flex',
@@ -190,7 +190,7 @@ export default function AppLayout() {
               }}
             >
               <RefreshCw size={12} className={retryingConnection ? 'animate-spin' : ''} />
-              {retryingConnection ? 'Retrying...' : 'Retry Connection'}
+              {retryingConnection ? 'Testing API...' : 'Check Live API'}
             </button>
           </div>
         )}
