@@ -1,12 +1,10 @@
 {
   "name": "megaton-shield",
   "version": "1.0.0",
-  "description": "Three-Stage RAG Integrity Shield - Cybersecurity Operations Platform",
   "private": true,
   "scripts": {
-    "build": "npm run build --prefix frontend",
-    "install": "npm install --prefix frontend",
-    "dev": "npm run dev --prefix frontend",
-    "preview": "npm run preview --prefix frontend"
+    "build": "npm --prefix frontend install --include=dev && npm --prefix frontend run build",
+    "install": "npm --prefix frontend install --include=dev",
+    "dev": "npm --prefix frontend run dev"
   }
 }
