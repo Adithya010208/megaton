@@ -47,10 +47,10 @@ export default function ClosedLoopViewPage() {
         </p>
       </div>
 
-      {/* Requirement #22: BEFORE / AFTER QUARANTINE PANELS */}
+      {/* BEFORE / AFTER QUARANTINE PANELS */}
       <div>
         <div style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '10px' }}>
-          Immediate System State Impact (Requirement #22):
+          Immediate System State Impact:
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '16px' }}>

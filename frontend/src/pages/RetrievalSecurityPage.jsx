@@ -139,12 +139,12 @@ export default function RetrievalSecurityPage() {
         </div>
       </div>
 
-      {/* Requirement 15: Cross-Tenant Isolation Showcase */}
+      {/* Cross-Tenant Isolation Showcase */}
       <div className="card" style={{ background: 'linear-gradient(135deg, #18181B 0%, #1F1929 100%)', border: '1px solid #6D28D9' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '16px', marginBottom: '14px' }}>
           <div>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '3px 8px', background: 'rgba(168, 85, 247, 0.2)', border: '1px solid #A855F7', borderRadius: '12px', color: '#D8B4FE', fontSize: '0.7rem', fontWeight: 700, marginBottom: '6px' }}>
-              <Lock size={12} /> CRITICAL SECURITY REQUIREMENT #15
+              <Lock size={12} /> HARD TENANT BOUNDARY ENFORCEMENT
             </div>
             <h2 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#F3F4F6' }}>
               Cross-Tenant Isolation Demonstration

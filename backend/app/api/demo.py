@@ -24,7 +24,7 @@ def reset_demo():
 @router.post("/run")
 def run_killer_demo(req: DemoRunRequest):
     """
-    Executes the 4-part killer demo sequence outlined in the Master Build Spec:
+    Executes the 4-part security demo sequence:
     Part A: Security OFF (Unsafe baseline reproducing prompt injection)
     Part B: Security ON (Protected flow catching the attack)
     Part C: Closed Loop (Source traced, quarantined, and repeat query safe)

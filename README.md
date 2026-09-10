@@ -2,14 +2,14 @@
 
 > **"We don't just secure what the user asks. We secure what the AI is allowed to learn from — and if a malicious source is discovered later, our system traces it back and removes its trust."**
 
-A complete hackathon prototype demonstrating end-to-end security for Retrieval-Augmented Generation (RAG) systems. Built following the Megathon Master Build Specification.
+An enterprise cybersecurity platform demonstrating end-to-end security for Retrieval-Augmented Generation (RAG) systems.
 
 ---
 
 ## 🛡️ Architecture Highlights
 
 1. **Stage 1: Secure Ingestion**
-   - Heuristic / regex instruction injection detection (AI directives, delimiters, exfiltration prompts).
+   - Heuristic and regex instruction injection detection (AI directives, delimiters, exfiltration prompts).
    - Domain-fit anomaly scoring & lexical stuffing analysis.
    - Tri-state policy: `ALLOW`, `QUARANTINE`, or `BLOCK` before chunks enter the retrievable candidate pool.
 
@@ -36,7 +36,7 @@ Simply double-click:
 ```text
 run.bat
 ```
-> **What it does automatically:** Creates a Python virtual environment, installs all backend dependencies from `requirements.txt`, launches the complete system on `http://localhost:8000`, and opens your default browser! **No Node.js or npm required.**
+> **What it does automatically:** Creates a Python virtual environment, installs all backend dependencies from `backend/requirements.txt`, launches the complete system on `http://localhost:8000`, and opens your default browser. **No Node.js or npm required.**
 
 ---
 
@@ -74,26 +74,14 @@ python -m pytest backend/tests -v
 
 The repository is pre-configured with `vercel.json`, root `package.json`, and SPA rewrites for one-click deployment on [Vercel](https://vercel.com).
 
-### Option A: Frontend on Vercel (Recommended)
-1. Import your GitHub repository `https://github.com/Adithya010208/megaton` into Vercel.
-2. Vercel automatically detects the build command:
-   - **Build Command**: `npm run build --prefix frontend` (or `cd frontend && npm install && npm run build`)
-   - **Output Directory**: `frontend/dist`
-3. *(Optional)* If your backend is deployed separately (e.g. on Render, Railway, or Fly.io), add an environment variable in Vercel:
-   - `VITE_API_BASE_URL` = `https://your-backend-api.onrender.com`
-4. Click **Deploy**. Vercel will build and serve the application with seamless client-side routing.
-
-### Option B: Monorepo Root Directory Setting
-If you set the **Root Directory** in Vercel project settings to `frontend`:
-- The included `frontend/vercel.json` ensures all routes (`/overview`, `/documents`, `/demo`, etc.) rewrite properly to `index.html` without 404 errors.
+- **Live URL**: [https://megaton-three.vercel.app](https://megaton-three.vercel.app)
+- Includes a client-side Cloud Sandbox mode so all consoles, KPI cards, and attack scenarios run interactively in cloud demo environments.
 
 ---
 
 ## 📁 Repository Structure
 
 ```text
-├── api/
-│   └── index.py            # Vercel serverless entry point (FastAPI ASGI)
 ├── backend/
 │   ├── app/
 │   │   ├── api/            # REST API routers (documents, retrieval, rag, security, demo)
@@ -101,18 +89,25 @@ If you set the **Root Directory** in Vercel project settings to `frontend`:
 │   │   ├── schemas/        # Pydantic data contracts
 │   │   ├── services/       # Stage 1 Scanner, Stage 2 Scoping, Stage 3 Inspector, Quarantine
 │   │   └── main.py         # FastAPI application entry point
+│   ├── data/
+│   │   └── seed_documents/ # Deterministic scenario seed documents
 │   ├── tests/              # Pytest automated test suite (10/10 passing)
+│   ├── pyproject.toml      # Python package definition
 │   └── requirements.txt    # Backend Python dependencies
 ├── data/
 │   └── uploads/            # Ingested documents storage
 ├── frontend/
 │   ├── src/
-│   │   ├── api/            # Unified API client with VITE_API_BASE_URL support
+│   │   ├── api/            # Unified API client with Cloud Sandbox fallback
 │   │   ├── components/     # AppLayout, Sidebar, Toast notifications
 │   │   └── pages/          # All 13 cyber-console operation pages
 │   ├── package.json        # Frontend React 19 + Vite dependencies
 │   └── vercel.json         # SPA rewrite fallback configuration
+├── run.bat                 # Windows 1-click launcher
+├── run.sh                  # macOS/Linux launcher
+├── run.py                  # Universal cross-platform launcher
+├── Dockerfile              # Container definition
+├── docker-compose.yml      # Multi-platform orchestration
 ├── vercel.json             # Root Vercel build & routing configuration
 └── README.md
 ```
-

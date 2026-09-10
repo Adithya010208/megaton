@@ -87,7 +87,7 @@ app.include_router(security_router)
 app.include_router(dashboard_router)
 app.include_router(demo_router)
 
-# Direct endpoint alias from master spec: GET /api/requests/{request_id}/trace
+# Forensic audit trace endpoint: GET /api/requests/{request_id}/trace
 @app.get("/api/requests/{request_id}/trace", tags=["retrieval"])
 def get_request_trace(request_id: str):
     trace = Repository.get_retrieval_trace(request_id)
@@ -96,7 +96,7 @@ def get_request_trace(request_id: str):
         raise HTTPException(status_code=404, detail="Retrieval trace not found")
     return trace
 
-# Static assets & SPA fallback routing for unified Vercel deployment
+# Static assets & SPA fallback routing for production deployment
 from pathlib import Path
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse

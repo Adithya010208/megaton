@@ -46,7 +46,7 @@ def test_api_requests_trace_endpoint():
     })
     req_id = res.json()["request_id"]
     
-    # Call the exact spec endpoint
+    # Call the forensic trace endpoint
     trace_res = client.get(f"/api/requests/{req_id}/trace")
     assert trace_res.status_code == 200
     trace_data = trace_res.json()
