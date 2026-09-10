@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  rag-integrity-shield:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=production
+      - LLM_PROVIDER=deterministic_mock
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped

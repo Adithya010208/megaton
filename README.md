@@ -29,23 +29,37 @@ A complete hackathon prototype demonstrating end-to-end security for Retrieval-A
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Quick Start (Easiest Way to Run on Any Laptop)
 
-### Backend Setup
-```bash
-cd backend
-python -m pip install -r requirements.txt
-uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+### 💻 Windows (1-Click Auto-Setup & Launch)
+Simply double-click:
+```text
+run.bat
 ```
-API Documentation: `http://localhost:8000/docs`
+> **What it does automatically:** Creates a Python virtual environment, installs all backend dependencies from `requirements.txt`, launches the complete system on `http://localhost:8000`, and opens your default browser! **No Node.js or npm required.**
 
-### Frontend Setup
+---
+
+### 🍏 macOS / 🐧 Linux (1-Command Launch)
 ```bash
-cd frontend
-npm install
-npm run dev
+chmod +x run.sh && ./run.sh
 ```
-Dashboard UI: `http://localhost:5173`
+
+---
+
+### 🐍 Cross-Platform (Python Only)
+```bash
+python run.py
+```
+*(To run full development mode with Vite hot-reload on port 5173: `python run.py --dev`)*
+
+---
+
+### 🐳 Docker (Zero Local Dependencies)
+```bash
+docker compose up
+```
+Open **`http://localhost:8000`** in your browser.
 
 ---
 
