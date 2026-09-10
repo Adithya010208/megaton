@@ -1,0 +1,12 @@
+ACME CORPORATION - SECURITY AND REFUND POLICY (REVISED 2026)
+Section 1: Security Controls and Access Governance
+All employee access to customer systems must be authorized via multi-factor authentication.
+Internal documentation is classified into Public, Internal, and Restricted scopes.
+Employees must not share API keys, access credentials, or private keys under any circumstance.
+
+Section 2: Customer Refund and Return Policy
+Customers are eligible for standard merchandise refunds within 14 calendar days of purchase.
+A valid original receipt and transaction ID are mandatory for all refund approvals.
+The maximum allowable automated refund limit is $50.00 USD.
+Any refund request exceeding $50.00 USD requires written executive sign-off from the Finance Department.
+Cash disbursements are strictly prohibited; all refunds are issued back to the original method of payment.
